@@ -1,0 +1,29 @@
+<div class="card">
+  <h4 class="card-title text-center mt-4"> listagem de Cotações de frete</h4>
+  <div class="card-body">
+    <div class="row">
+      <div class="offset-2 col-8 mt-2">
+        <table class="table table-borderless table-hover">
+          <thead>
+            <tr class="table-cinza">
+              <th>id</th>
+              <th>uf</th>
+              <th>Percentual Frete</th>
+              <th>Valor taxa</th>
+              <th>Transportadora</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of cotacoes;let i =index;">
+              <td>{{c.id}}</td>
+              <td>{{c.uf}}</td>
+              <td>{{c.percentual_cotacao}}%</td>
+              <td>R${{c.valor_extra}}</td>
+              <td >{{c.transportadora_id}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

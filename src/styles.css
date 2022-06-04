@@ -1,0 +1,29 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.btn-submit {
+  width: 100%;
+  color: #fff;
+  outline: 0;
+  font-size: 1ren;
+  font-weight: 500;
+  font-weight: 600;
+  /* background-color: #005fad; */
+  background-color: #5cb85c;
+}
+.table-cinza {
+  background-color: #ccc;
+}
+
+.table-hover tbody tr:hover{
+  color: #858796;
+  background-color: rgb(68, 64, 64);
+}
+
+.table-hover td, th{
+  background-color: #ebedf5;
+}
+
+.col-form-label {
+  white-space: nowrap;
+  text-align: right;
+}

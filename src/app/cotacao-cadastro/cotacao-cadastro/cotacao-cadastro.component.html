@@ -1,0 +1,60 @@
+<div class="card">
+  <h4 class="card-title text-center mt-4"> Cadastro de Cotação de frete</h4>
+  <div class="card-body">
+    <div class="row">
+      <form class="container" [formGroup]="formCadastroCotacao">
+        <div class="offset-2 col-8">
+          <label>Transportadora</label>
+          <select formControlName="transportadora_id" name="transportadora_id" class="form-select" required>
+            <option selected value=""> Selecione</option>
+            <option *ngFor="let t of transportadoras" value="{{t.id}}">{{t.nome}}</option>
+          </select>
+        </div>
+        <div class="offset-2 col-8 mt-2">
+          <label>Estado (UF)</label>
+          <select formControlName="uf" name="uf" class="form-select" required>
+            <option selected value="">Selecione</option>
+            <option value="AC">Acre (AC)</option>
+            <option value="AL">Alagoas (AL)</option>
+            <option value="AL">Amapá (AL)</option>
+            <option value="AM">Amazonas (AM)</option>
+            <option value="BA">Bahia (BA)</option>
+            <option value="CE">Ceará (CE)</option>
+            <option value="DF">Distrito Federal (DF)</option>
+            <option value="ES">Espírito Santo (ES)</option>
+            <option value="GO">Goiás (GO)</option>
+            <option value="MA">Maranhão (MA)</option>
+            <option value="MT">Mato Grosso (MT)</option>
+            <option value="MS">Mato Grosso do Sul (MS)</option>
+            <option value="MG">Minas Gerais (MG)</option>
+            <option value="PA">Pará (PA)</option>
+            <option value="PB">Paraíba (PB)</option>
+            <option value="PR">Paraná (PR)</option>
+            <option value="PE">Pernambuco (PE)</option>
+            <option value="PI">Piauí (PI)</option>
+            <option value="RN">Rio Grande do Norte (RN)</option>
+            <option value="RS">Rio Grande do Sul (RS)</option>
+            <option value="RJ">Rio de Janeiro (RJ)</option>
+            <option value="RO">Rondônia (RO)</option>
+            <option value="RR">Roraima (RR)</option>
+            <option value="SC">Santa Catarina (SC)</option>
+            <option value="SP">São Paulo (SP)</option>
+            <option value="SE">Sergipe (SE)</option>
+            <option value="TO">Tocantins (TO)</option>
+          </select>
+        </div>
+        <div class="formg-group offset-2 col-8 mt-2">
+          <label>Percentual cotação %</label>
+          <input type="number" formControlName="percentual_cotacao" name="percentual_cotacao" class="form-control" placeholder="Ex: 2.5" required>
+        </div>
+        <div class="formg-group offset-2 col-8 mt-2">
+          <label>Valor extra(R$)</label>
+          <input type="number" formControlName="valor_extra" name="valor_extra" class="form-control" placeholder="Ex: 8.90" required>
+        </div>
+        <div class="formg-group offset-2 col-8 mt-2">
+          <button class="btn btn-submit" (click)="cadastrarCotacao()"><span>Salvar</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

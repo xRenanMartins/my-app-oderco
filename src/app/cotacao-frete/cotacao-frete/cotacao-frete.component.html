@@ -1,0 +1,44 @@
+<div class="card">
+  <h4 class="card-title text-center mt-4"> Cadastro de Cotação de frete</h4>
+  <div class="card-body">
+    <div class="row">
+      <form class="container" onsubmit="formCotacaoFrete" [formGroup]="formCotacaoFrete">
+        <div class="form-group offset-2 col-8 mt-2">
+          <select id="uf" formControlName="uf" name="uf" class="form-control" required>
+            <option selected value="">Selecione</option>
+            <option *ngFor="let c of cotacoes;let t = index;" value="{{c.uf}}">{{c.uf}}</option>
+          </select>
+        </div>
+        <div class="formg-group offset-2 col-8 mt-2">
+          <label class="col-fom-label">Percentual cotação %</label>
+          <input id="valor_pedido" formControlName="valor_pedido" name="valor_pedido" type="number" class="form-control" placeholder="Ex: 2.5" required>
+        </div>
+
+        <div class="offset-2 col-8 mt-2">
+          <button class="btn btn-submit" (click)="cotacaoFrete()" ><span>Cotar</span></button>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <div class="offset-2 col-8 mt-2">
+        <h6>Melhores Resultados</h6>
+        <table class="table table-borderless table-hover">
+          <thead>
+            <tr class="table-cinza">
+              <th>UF</th>
+              <th>Transportadora</th>
+              <th>Valor Cotação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of melhoresCotacoes;let i =index;">
+              <td>{{c.uf}}</td>
+              <td >{{c.transportadora_id}}</td>
+              <td>R${{c.valor_cotacao}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
