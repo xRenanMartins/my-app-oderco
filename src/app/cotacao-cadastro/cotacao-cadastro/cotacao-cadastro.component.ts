@@ -43,7 +43,9 @@ export class CotacaoCadastroComponent implements OnInit {
 
     if (checaErro == true) {
       this.sCotacao.cadastraCotacao(this.formCadastroCotacao.value).subscribe(dados => {
-        Swal.fire('Sucesso', 'Cotação cadastrada com sucesso!', 'success')
+        Swal.fire({title: 'Sucesso', html:'Cotação cadastrada com sucesso!', icon: 'success', timer: 2000}).then(() =>{
+          window.location.reload()
+        })
       }, e => {
         let erro = (e.error.Code == "error" || e.status == "422") ? e.error.errors.uf[0] : 'Ops! Houve um erro inesperado.';
         Swal.fire("Ops!", erro, "error");
